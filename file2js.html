@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Selector and Animated Box</title>
+    <link rel="website icon" type="png" href="musab11.jpg">
+    <style>
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #0f2b29;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+#colorPicker {
+    margin-bottom: 20px;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: #3498db;
+    margin: 20px auto;
+    animation: bounce 2s infinite;
+}
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="color" id="colorPicker">
+        <button onclick="applyColor()">Apply Color</button>
+        <div id="animatedBox" class="box"></div>
+ </div>
+</body>
+    <script>
+        function applyColor() {
+    const color = document.getElementById('colorPicker').value;
+    const box = document.getElementById('animatedBox');
+    box.style.backgroundColor = color;
+}
+    </script>
+
+</html>

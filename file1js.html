@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>clock</title>
+    <link rel="website icon" type="png" href="musab11.jpg">
+    <style>
+        body{
+            background-color:rgb(11, 9, 27) ;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        h1{
+            box-shadow: 12px 12px 12px 12px rgb(12, 255, 215);
+            background-color: rgb(2, 221, 210);
+            font-size: 100px;
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            border: 10px solid rgb(8, 8, 8);
+            width: 900px;
+        }
+    </style>
+</head>
+<body onload="showTime()">
+     <h1></h1>
+</body>
+<script>
+    function showTime() {
+        var d= new Date()
+        var h= d.getHours()
+        var m= d.getMinutes()
+        var s= d.getSeconds()
+       var sec = "AM"
+       
+    if (h > 12) {
+         h = h - 12;
+        //  h = 13-12 = 1
+    }
+    if (h > 12) {
+        sec="PM"
+    }
+
+      h = h < 10 ? "0"+ h : h;
+      m = m < 10 ? "0"+ m : m;
+      s = s < 10 ? "0"+ s : s;
+
+        var Time = h+":"+m+":"+s +" "+sec;
+        document.getElementsByTagName('h1')[0].innerText=Time;
+        setTimeout(showTime,1000)
+    }
+
+    // if (h < 12) {
+    //     h = h - 12;
+    // }
+    // if () {
+        
+    // }
+</script>
+</html>
